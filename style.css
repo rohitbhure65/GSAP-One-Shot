@@ -11,77 +11,36 @@ body {
   width: 100%;
 }
 
-#box {
-  width: 300px;
-  height: 300px;
-  background-color: orange;
+#page1,
+#page2,
+#page3 {
+  height: 100%;
+  width: 100%;
 }
 
-#box1 {
-  width: 300px;
-  height: 300px;
-  background-color: red;
-}
-
-#box2 {
-  width: 300px;
-  height: 300px;
-  background-color: green;
-}
-
-#box3 {
-  width: 300px;
-  height: 300px;
-  background-color: blue;
-}
-
-#box4 {
-  width: 300px;
-  height: 300px;
-  background-color: purple;
-}
-
-#box5 {
-  width: 300px;
-  height: 300px;
-  background-color: yellow;
-}
-
-#nav {
+#page1 {
+  background-color: lightblue;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
 }
 
-#nav h2 {
-  font-size: 24px;
+#page2 {
+  background-color: lightgreen;
+    display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#part2 {
-  display: flex;
-  gap: 20px;
+#page3 {
+  background-color: lightcoral;
+    display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#part2 h4 {
-  font-size: 18px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-#part2 h4:hover {
-  color: orange;
-}
-
-h3{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 100px;
-  /* convert text into one line */
-  white-space: nowrap;
-  
+#box{
+  width: 300px;
+  height: 300px;
+  background-color: crimson;
 }

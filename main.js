@@ -1,72 +1,23 @@
-// gsap.to animates the target element from its current state to the specified properties.
-gsap.to('#box', {
-    x: 1000, // Moves the element 1000px along the x-axis.
-    duration: 2, // Animation lasts for 2 seconds.
-    delay: 1 // Starts the animation after a 1-second delay.
-});
-
-// gsap.from animates the target element from the specified properties to its current state.
-// Example:
-// gsap.from('#box', {
-//   x: -500, // Starts the animation with the element 500px to the left of its current position.
-//   duration: 1.5, // Animation lasts for 1.5 seconds.
-//   opacity: 0 // Starts the animation with the element fully transparent.
-// });
-
-gsap.from('#box1', {
-    x: 1000,
-    duration: 2,
+// Animate the element with ID 'box' inside 'page1'.
+// The animation scales the element from 0 to its original size, rotates it 360 degrees, and starts after a delay of 1 second.
+gsap.from('#page1 #box', {
+    scale: 0,
     delay: 1,
-    backgroundColor: 'blue', // camel case for css in gsap
-    scale: 0.5, // Scales the element to half its size.
+    rotate: 360,
 });
 
-gsap.from('h1', {
-    opacity: 0,
-    duration: 1,
-    delay: 1,
-    y: 30,
-    stagger: 0.5, // -1 for reverse move | Staggers the animation for multiple elements.  
-    repeat: 1, // Repeats the animation once. if u use -1 it will repeat infinitely
-    yoyo: true, // Bounces back to the original position after the animation.
-});
-
-var tl = gsap.timeline()
-
-// tl.to('#box4', {
-//     x: 1000,
-//     duration: 2,
-//     delay: 1,
-//     backgroundColor: 'blue',
-//     scale: 0.5,
-// })
-
-// tl.to('#box5', {
-//     x: 1000,
-//     duration: 2,
-//     delay: 1,
-//     backgroundColor: 'blue',
-//     scale: 0.5,
-// })
-
-tl.from("h2",{
-    y:-20,
-    opacity:0,
-    duration: 1,
-    delay: 0.5
-})
-
-
-tl.from("#part2 h4",{
-    y:-20,
-    opacity:0,
-    duration: 1,
-   stagger: 0.3,
-})
-
-tl.from("h3",{
-    y:-20,
-    opacity:0,
-    duration: 1,
-  scale:0.5,
-})
+// Animate the element with ID 'box' inside 'page2'.
+// The animation scales the element from 0 to its original size and rotates it 360 degrees.
+// The scrollTrigger configuration ensures the animation is triggered when the element comes into view during scrolling.
+gsap.from('#page2 #box', {
+    scale: 0,
+    rotate: 360,
+    scrollTrigger: {
+        trigger: "#page2 #box", // The element that triggers the animation.
+        scroller: "body", // The container being scrolled.
+        markers: true, // Displays markers for debugging the start and end points of the animation.
+        start: "top 60%", // Animation starts when the top of the element reaches 60% of the viewport height.
+        end: "top 50%", // Animation ends when the top of the element reaches 50% of the viewport height.
+        scrub: 2 // Smoothly scrubs the animation in sync with the scroll position.
+    }
+}); 
